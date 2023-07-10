@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Jabatan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class JabatanController extends Controller
 {
@@ -12,7 +13,10 @@ class JabatanController extends Controller
      */
     public function index()
     {
-        //
+        $data = Jabatan::all();
+        return view('admin.jabatan.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class JabatanController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.jabatan.create');
     }
 
     /**
@@ -28,7 +32,11 @@ class JabatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        $data = Jabatan::create($data_req);
+        return redirect()->route('jabatan.index');
     }
 
     /**
@@ -44,7 +52,10 @@ class JabatanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Jabatan::findOrFail($id);
+        return view('admin.jabatan.edit', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -52,7 +63,13 @@ class JabatanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        unset($data_req['_method']);
+        $data = Jabatan::findOrFail($id);
+        $data->update($data_req);
+        return redirect()->route('jabatan.index');
     }
 
     /**
@@ -60,6 +77,8 @@ class JabatanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // destroy jabatan
+        $jabatan = Jabatan::destroy($id);
+        return redirect()->route('jabatan.index');
     }
 }

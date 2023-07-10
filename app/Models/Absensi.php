@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Absensi extends Model
 {
     use HasFactory;
+
+    protected $table = 'absensi';
+
+    // relasi belongs to personal
+    public function personal()
+    {
+        return $this->belongsTo(Personal::class);
+    }
 }
