@@ -23,14 +23,12 @@
     <link rel="shortcut icon" href="{{ asset('media/favicons/favicon.png') }}">
     <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('media/favicons/favicon-192x192.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/apple-touch-icon-180x180.png') }}">
-
     <!-- Modules -->
     @yield('css')
     @vite(['resources/sass/main.scss', 'resources/js/codebase/app.js'])
 
     <!-- Alternatively, you can also include a specific color theme after the main stylesheet to alter the default color theme of the template -->
     {{-- @vite(['resources/sass/main.scss', 'resources/sass/codebase/themes/corporate.scss', 'resources/js/codebase/app.js']) --}}
-    @yield('js')
 </head>
 
 <body>
@@ -179,6 +177,7 @@
         <!-- END Main Container -->
 
         <!-- Footer -->
+        {{-- template from codebase --}}
         <footer id="page-footer">
             <div class="content py-3">
                 <div class="row fs-sm">
@@ -196,6 +195,14 @@
         <!-- END Footer -->
     </div>
     <!-- END Page Container -->
+
+    {{-- @vite(['resources/js/codebase/modules/myModule.js']) --}}
+    @vite(['resources/js/codebase/modules/myModule.js'])
+    <script src="{{ asset('js/lib/jquery.min.js') }}"></script>
+    @vite(['resources/js/app.js'])
+    @yield('js')
+
+
 </body>
 
 </html>

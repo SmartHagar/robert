@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('honorer', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('personal_id')->constrained('personal')->cascadeOnDelete();
+            $table->date('mulai_kerja');
             $table->timestamps();
         });
     }

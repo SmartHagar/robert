@@ -75,16 +75,44 @@
                      <li class="nav-main-heading">Master</li>
                      <li class="nav-main-item">
                          <a class="nav-main-link{{ request()->is('admin/pangkat') ? ' active' : '' }}"
-                             href={{ route('admin') }}>
+                             href={{ route('pangkat.index') }}>
                              <i class="fa-solid fa-briefcase nav-main-link-icon"></i>
                              <span class="nav-main-link-name">Pangkat</span>
                          </a>
                      </li>
                      <li class="nav-main-item">
-                         <a class="nav-main-link{{ request()->is('admin/pangkat') ? ' active' : '' }}"
+                         <a class="nav-main-link{{ request()->is('admin/jabatan') ? ' active' : '' }}"
+                             href={{ route('admin') }}>
+                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                             <span class="nav-main-link-name">Jabatan</span>
+                         </a>
+                     </li>
+                     <li class="nav-main-item">
+                         <a class="nav-main-link{{ request()->is('admin/personal') ? ' active' : '' }}"
+                             href={{ route('admin') }}>
+                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                             <span class="nav-main-link-name">Personal</span>
+                         </a>
+                     </li>
+                     <li class="nav-main-item">
+                         <a class="nav-main-link{{ request()->is('admin/pegawai') ? ' active' : '' }}"
                              href={{ route('admin') }}>
                              <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
                              <span class="nav-main-link-name">Pegawai</span>
+                         </a>
+                     </li>
+                     <li class="nav-main-item">
+                         <a class="nav-main-link{{ request()->is('admin/honorer') ? ' active' : '' }}"
+                             href={{ route('admin') }}>
+                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                             <span class="nav-main-link-name">Honorer</span>
+                         </a>
+                     </li>
+                     <li class="nav-main-item">
+                         <a class="nav-main-link{{ request()->is('admin/absensi') ? ' active' : '' }}"
+                             href={{ route('admin') }}>
+                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                             <span class="nav-main-link-name">Absensi</span>
                          </a>
                      </li>
                  </ul>

@@ -14,8 +14,7 @@ return new class extends Migration
         // ['golongan' => 'I', "nama" => 'Juru', 'pangkat' => 'juru muda', 'ruang' => 'A'],
         Schema::create('pangkat', function (Blueprint $table) {
             $table->id();
-            $table->string('golongan', 4);
-            $table->string('nama', 20);
+            $table->string('golongan', 30);
             $table->string('pangkat', 50);
             $table->string('ruang', 2);
             $table->timestamps();

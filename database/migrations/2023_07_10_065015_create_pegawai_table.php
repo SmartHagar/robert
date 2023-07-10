@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('pegawai', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('personal_id')->constrained('personal')->cascadeOnDelete();
+            $table->string('NIP', 20);
+            $table->foreignId('pangkat_id')->constrained('pangkat')->cascadeOnDelete();
             $table->timestamps();
         });
     }

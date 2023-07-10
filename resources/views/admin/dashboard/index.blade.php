@@ -4,7 +4,7 @@
     <!-- Page Content -->
     <div class="content">
         <div class="row items-push">
-            <div class="col-md-6 col-xl-4">
+            <div class="col-12">
                 <div class="block block-rounded h-100 mb-0">
                     <div class="block-header block-header-default">
                         <h3 class="block-title">
@@ -22,118 +22,6 @@
                         </p>
                         <p class="fw-semibold">
                             Wish you all the best and happy coding!
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="block block-rounded h-100 mb-0">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            Block Title
-                        </h3>
-                    </div>
-                    <div class="block-content font-size-sm text-muted">
-                        <p>
-                            ...
                         </p>
                     </div>
                 </div>

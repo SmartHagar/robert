@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('personal', function (Blueprint $table) {
             $table->id();
+            $table->string('nama', 150);
+            $table->foreignId('jabatan_id')->constrained('jabatan')->cascadeOnDelete();
+            $table->string('jenkel', 12);
+            $table->text('pendidikan');
+            $table->string('agama', 50);
+            $table->date('tempat');
+            $table->date('tanggal_lahir');
+            $table->string('no_hp', 18);
+            $table->text('alamat');
             $table->timestamps();
         });
     }

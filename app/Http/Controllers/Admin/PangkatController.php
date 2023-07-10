@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pangkat;
 use Illuminate\Http\Request;
 
 class PangkatController extends Controller
@@ -12,7 +13,10 @@ class PangkatController extends Controller
      */
     public function index()
     {
-        //
+        $data = Pangkat::all();
+        return view('admin.pangkat.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class PangkatController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pangkat.create');
     }
 
     /**
@@ -28,7 +32,11 @@ class PangkatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        $data = Pangkat::create($data_req);
+        return redirect()->route('pangkat.index');
     }
 
     /**
@@ -44,7 +52,10 @@ class PangkatController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Pangkat::findOrFail($id);
+        return view('admin.pangkat.edit', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -52,7 +63,13 @@ class PangkatController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        unset($data_req['_method']);
+        $data = Pangkat::findOrFail($id);
+        $data->update($data_req);
+        return redirect()->route('pangkat.index');
     }
 
     /**
@@ -60,6 +77,8 @@ class PangkatController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // destroy pangkat
+        $pangkat = Pangkat::destroy($id);
+        return redirect()->route('pangkat.index');
     }
 }
