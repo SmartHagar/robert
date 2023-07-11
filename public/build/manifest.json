@@ -80,7 +80,7 @@
     "src": "resources/js/codebase/app.js"
   },
   "resources/js/codebase/modules/myModule.js": {
-    "file": "assets/myModule-a0f7748a.js",
+    "file": "assets/myModule-06362f2c.js",
     "imports": [
       "_axios-aba6f0e0.js"
     ],
