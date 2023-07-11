@@ -52,7 +52,7 @@
                                  Admin</a>
                          </li>
                          <li class="list-inline-item">
-                             <a class="link-fx text-dual" title="Logout" href="javascript:void(0)">
+                             <a class="link-fx text-dual" title="Logout" href="{{ route('logout') }}">
                                  <i class="fa fa-sign-out-alt"></i>
                              </a>
                          </li>
@@ -83,14 +83,14 @@
                      <li class="nav-main-item">
                          <a class="nav-main-link{{ request()->is('admin/jabatan') ? ' active' : '' }}"
                              href={{ route('jabatan.index') }}>
-                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                             <i class="fa-solid fa-handshake nav-main-link-icon"></i>
                              <span class="nav-main-link-name">Jabatan</span>
                          </a>
                      </li>
                      <li class="nav-main-item">
                          <a class="nav-main-link{{ request()->is('admin/personal') ? ' active' : '' }}"
                              href={{ route('personal.index') }}>
-                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                             <i class="fa-solid fa-person nav-main-link-icon"></i>
                              <span class="nav-main-link-name">Personal</span>
                          </a>
                      </li>
@@ -108,10 +108,14 @@
                              <span class="nav-main-link-name">Pegawai</span>
                          </a>
                      </li>
+                     {{-- get date now --}}
+                     @php
+                         $date = date('Y-m-d');
+                     @endphp
                      <li class="nav-main-item">
                          <a class="nav-main-link{{ request()->is('admin/absensi') ? ' active' : '' }}"
-                             href={{ route('absensi.index') }}>
-                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                             href={{ route('absensi.index', "tgl_absen=$date") }}>
+                             <i class="fa-solid fa-book nav-main-link-icon "></i>
                              <span class="nav-main-link-name">Absensi</span>
                          </a>
                      </li>

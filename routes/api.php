@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/absensi', [AbsensiApi::class, 'index'])->name('api.absensi');
+Route::post('/absensi', [AbsensiApi::class, 'store'])->name('api.absensi');

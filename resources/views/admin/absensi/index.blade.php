@@ -30,6 +30,9 @@
                             <a href="{{ route('absensi.create') }}" class="btn btn-secondary float-end">Tambah Data</a>
                         </div>
                     </div>
+                    <div class="block block-rounded col-3 mx-auto">
+                        <input type="date" name="tgl_absen" class="form-control" id="tgl_absen">
+                    </div>
                     <!-- Dynamic Table with Export Buttons -->
                     <div class="block block-rounded">
                         <div class="table-responsive">
@@ -40,8 +43,9 @@
                                     <tr>
                                         <th class="text-center" style="width: 80px;">#</th>
                                         <th>Nama</th>
-                                        <th>Jabatan</th>
-                                        <th>Mulai Kerja</th>
+                                        <th>jam masuk</th>
+                                        <th>jam pulang</th>
+                                        <th>keterangan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -49,19 +53,35 @@
                                     @foreach ($data as $item)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td class="text-muted text-nowrap"">{{ $item->personal->nama }}</td>
-                                            <td class="text-muted text-nowrap"">{{ $item->personal->jabatan->nama }}</td>
-                                            <td class="text-muted text-nowrap"">{{ $item->mulai_kerja }}</td>
+                                            <td class="text-muted text-nowrap">{{ $item->nama }}</td>
+                                            <td class="text-muted text-nowrap">
+                                                {{-- {{ $item->jam_masuk }} --}}
+                                                <input type="time" value="{{ $item->jam_masuk }}" class="form-control"
+                                                    name="jam_masuk" id="jam_masuk_{{ $item->id }}" required />
+                                                <span class="text-danger d-none"
+                                                    id="jam_masuk_error_{{ $item->id }}">Tidak
+                                                    boleh kosong</span>
+                                            </td>
+                                            <td class="text-muted text-nowrap">
+                                                <input type="time" value="{{ $item->jam_pulang }}" class="form-control"
+                                                    name="jam_pulang" id="jam_pulang_{{ $item->id }}" />
+                                                <span class="text-danger d-none"
+                                                    id="jam_pulang_error_{{ $item->id }}">Tidak
+                                                    boleh kosong</span>
+                                            </td>
+                                            <td class="text-muted text-nowrap">
+                                                <textarea class="form-control" name="keterangan" id="keterangan_{{ $item->id }}">{{ $item->keterangan }}</textarea>
+                                                <span class="text-danger d-none"
+                                                    id="keterangan_error_{{ $item->id }}">Tidak
+                                                    boleh kosong</span>
+                                            </td>
                                             <td class="text-muted d-flex justify-content-around">
-                                                {{-- edit --}}
-                                                <a class="text-warning" href="{{ route('absensi.edit', $item->id) }}">
-                                                    <i class="fa-solid fa-pencil"></i>
-                                                </a>
-                                                {{-- hapus --}}
-                                                <span class="text-danger hapus" role="button" title="Hapus"
-                                                    data-url="absensi" data-id="{{ $item->id }}">
-                                                    <i class="fa-regular fa-trash-can"></i>
-                                                </span>
+                                                {{-- simpan --}}
+                                                <button class="btn btn-primary btn-sm simpan_absen" role="button"
+                                                    title="Simpan" data-url="absensi"
+                                                    data-personal_id="{{ $item->id }}">
+                                                    Simpan
+                                                </button>
                                             </td>
                                         </tr>
                                     @endforeach
