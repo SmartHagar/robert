@@ -20,7 +20,7 @@ class AbsensiController extends Controller
                 ->whereRaw('absensi.tgl_absen like "%' . $tgl_absen . '%"');
         })
             ->select('personal.*', 'absensi.tgl_absen', 'absensi.keterangan', 'absensi.jam_masuk', 'absensi.jam_pulang', 'absensi.id as absensi_id')
-            ->orderBy('absensi.tgl_absen', 'asc')
+            ->orderBy('personal.nama', 'asc')
             ->get();
         return view('admin.absensi.index', [
             'data' => $data

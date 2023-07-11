@@ -37,8 +37,7 @@
                     <div class="block block-rounded">
                         <div class="table-responsive">
                             <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/tables_datatables.js -->
-                            <table
-                                class="table table-responsive table-bordered table-striped table-vcenter js-dataTable-buttons">
+                            <table class="table table-vcenter js-dataTable-buttons">
                                 <thead>
                                     <tr>
                                         <th class="text-center" style="width: 80px;">#</th>
@@ -51,7 +50,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $item)
-                                        <tr>
+                                        <tr class="@if ($item->jam_masuk == null) bg-warning-light @endif">
                                             <td class="text-center">{{ $loop->iteration }}</td>
                                             <td class="text-muted text-nowrap">{{ $item->nama }}</td>
                                             <td class="text-muted text-nowrap">
@@ -82,6 +81,12 @@
                                                     data-personal_id="{{ $item->id }}">
                                                     Simpan
                                                 </button>
+
+                                                {{-- hapus --}}
+                                                <span class="text-danger hapus" role="button" title="Hapus"
+                                                    data-url="absensi" data-id="{{ $item->absensi_id }}">
+                                                    <i class="fa-regular fa-trash-can"></i>
+                                                </span>
                                             </td>
                                         </tr>
                                     @endforeach
