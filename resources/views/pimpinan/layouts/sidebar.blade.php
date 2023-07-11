@@ -52,7 +52,7 @@
                                  Pimpinan</a>
                          </li>
                          <li class="list-inline-item">
-                             <a class="link-fx text-dual" title="Logout" href="javascript:void(0)">
+                             <a class="link-fx text-dual" title="Logout" href="{{ route('logout') }}">
                                  <i class="fa fa-sign-out-alt"></i>
                              </a>
                          </li>
@@ -72,8 +72,38 @@
                              <span class="nav-main-link-name">Dashboard</span>
                          </a>
                      </li>
-                     <li class="nav-main-heading">Laporan</li>
-
+                     {{-- <li class="nav-main-heading">Laporan</li> --}}
+                     <li class="nav-main-item{{ request()->is('pimpinan/laporan/*') ? ' open' : '' }}">
+                         <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
+                             aria-expanded="true" href="#">
+                             <i class="nav-main-link-icon fa fa-lightbulb"></i>
+                             <span class="nav-main-link-name">Laporan</span>
+                         </a>
+                         <ul class="nav-main-submenu">
+                             <li class="nav-main-item">
+                                 <a class="nav-main-link{{ request()->is('pimpinan/laporan/pegawai') ? ' active' : '' }}"
+                                     href="{{ route('pegawai.pimpinan.index') }}">
+                                     <span class="nav-main-link-name">Pegawai</span>
+                                 </a>
+                             </li>
+                             <li class="nav-main-item">
+                                 <a class="nav-main-link{{ request()->is('pimpinan/laporan/honorer') ? ' active' : '' }}"
+                                     href="{{ route('honorer.pimpinan.index') }}">
+                                     <span class="nav-main-link-name">Honorer</span>
+                                 </a>
+                             </li>
+                             {{-- get date now --}}
+                             @php
+                                 $date = date('Y-m-d');
+                             @endphp
+                             <li class="nav-main-item">
+                                 <a class="nav-main-link{{ request()->is('pimpinan/laporan/absensi') ? ' active' : '' }}"
+                                     href="{{ route('absensi.pimpinan.index', "tgl_absen=$date") }}">
+                                     <span class="nav-main-link-name">Absensi</span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </li>
                  </ul>
              </div>
              <!-- END Side Navigation -->

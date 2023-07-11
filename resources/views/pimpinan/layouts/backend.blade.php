@@ -89,7 +89,7 @@
 
                 <!-- User Info -->
                 <a class="link-fx text-body-color-dark fw-semibold fs-sm" href="javascript:void(0)">
-                    Admin
+                    Pimpinan
                 </a>
                 <!-- END User Info -->
 
@@ -125,7 +125,7 @@
       Adding .smini-visible to an element will show it only when the sidebar is in mini mode
       Adding 'smini-visible-block' to an element will show it (display: block) only when the sidebar is in mini mode
     -->
-        @include('admin.layouts.sidebar')
+        @include('pimpinan.layouts.sidebar')
         <!-- END Sidebar -->
 
         <!-- Header -->
@@ -152,7 +152,7 @@
                 <!-- END Left Section -->
 
                 <!-- Right Section -->
-                @include('admin.layouts.rightbar')
+                @include('pimpinan.layouts.rightbar')
                 <!-- END Right Section -->
             </div>
             <!-- END Header Content -->

@@ -26,9 +26,6 @@
                         <h3 class="block-title">
                             Data Absensi
                         </h3>
-                        <div>
-                            <a href="{{ route('absensi.create') }}" class="btn btn-secondary float-end">Tambah Data</a>
-                        </div>
                     </div>
                     <div class="block block-rounded col-3 mx-auto">
                         <input type="date" name="tgl_absen" class="form-control" id="tgl_absen">
@@ -83,10 +80,12 @@
                                                 </button>
 
                                                 {{-- hapus --}}
-                                                <span class="text-danger hapus" role="button" title="Hapus"
-                                                    data-url="absensi" data-id="{{ $item->absensi_id }}">
-                                                    <i class="fa-regular fa-trash-can"></i>
-                                                </span>
+                                                @if ($item->jam_masuk !== null)
+                                                    <span class="text-danger hapus" role="button" title="Hapus"
+                                                        data-url="absensi" data-id="{{ $item->absensi_id }}">
+                                                        <i class="fa-regular fa-trash-can"></i>
+                                                    </span>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

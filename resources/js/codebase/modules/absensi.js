@@ -2,16 +2,21 @@ console.log("absensi");
 import axios from "axios";
 const tgl_absen = document.getElementById("tgl_absen");
 // 2023-07-02
+// get params tgl_absen from params url
+const location = window.location;
+const queryString = location.search;
+const urlParams = new URLSearchParams(queryString);
+
 // when tgl_absen is changed, go to link absensi?tgl_absen
 if (tgl_absen) {
   tgl_absen.addEventListener("change", (e) => {
+    const { pathname } = location;
     console.log(tgl_absen.value);
-    window.location.href = "/admin/absensi?tgl_absen=" + tgl_absen.value;
+    console.log({ pathname });
+    // window.location.href = "/admin/absensi?tgl_absen=" + tgl_absen.value;
+    window.location.href = `${pathname}?tgl_absen=${tgl_absen.value}`;
   });
 
-  // get params tgl_absen from params url
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
   const tgl_params = urlParams.get("tgl_absen");
   // set tgl_absen to tgl_params
   tgl_absen.value = tgl_params;
