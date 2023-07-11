@@ -28,27 +28,28 @@
                     <!-- Sign In Form -->
                     <!-- jQuery Validation functionality is initialized with .js-validation-signin class in js/pages/op_auth_signin.min.js which was auto compiled from _js/pages/op_auth_signin.js -->
                     <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                    <form class="js-validation-signin px-4" action="" method="POST">
+                    <form class="js-validation-signin px-4" action="{{ route('authenticate') }}" method="POST">
+                        @csrf
                         <div class="form-floating mb-4">
-                            <input type="text" class="form-control" id="login-username" name="login-username"
-                                placeholder="Enter your username">
-                            <label class="form-label" for="login-username">Username</label>
+                            <input type="text" class="form-control" id="login-email" name="email"
+                                placeholder="Enter your email">
+                            <label class="form-label" for="login-email">Email</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="login-password" name="login-password"
+                            <input type="password" class="form-control" id="login-password" name="password"
                                 placeholder="Enter your password">
                             <label class="form-label" for="login-password">Password</label>
                         </div>
                         <div class="mb-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="login-remember-me"
-                                    name="login-remember-me" checked>
+                                    name="remember-me" checked>
                                 <label class="form-check-label" for="login-remember-me">Remember Me</label>
                             </div>
                         </div>
                         <div class="mb-4">
                             <button type="submit" class="btn btn-lg btn-alt-primary fw-semibold">
-                                Sign In
+                                Login
                             </button>
                         </div>
                     </form>
