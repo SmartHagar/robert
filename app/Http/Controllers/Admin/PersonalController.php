@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Personal;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Jabatan;
 
 class PersonalController extends Controller
 {
@@ -12,7 +14,10 @@ class PersonalController extends Controller
      */
     public function index()
     {
-        //
+        $data = Personal::all();
+        return view('admin.personal.index', [
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -20,7 +25,10 @@ class PersonalController extends Controller
      */
     public function create()
     {
-        //
+        $jabatan = Jabatan::all();
+        return view('admin.personal.create', [
+            'jabatan' => $jabatan
+        ]);
     }
 
     /**
@@ -28,7 +36,11 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        $data = Personal::create($data_req);
+        return redirect()->route('personal.index');
     }
 
     /**
@@ -44,7 +56,12 @@ class PersonalController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Personal::findOrFail($id);
+        $jabatan = Jabatan::all();
+        return view('admin.personal.edit', [
+            'data' => $data,
+            'jabatan' => $jabatan
+        ]);
     }
 
     /**
@@ -52,7 +69,13 @@ class PersonalController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        unset($data_req['_method']);
+        $data = Personal::findOrFail($id);
+        $data->update($data_req);
+        return redirect()->route('personal.index');
     }
 
     /**
@@ -60,6 +83,8 @@ class PersonalController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // destroy personal
+        $personal = Personal::destroy($id);
+        return redirect()->route('personal.index');
     }
 }

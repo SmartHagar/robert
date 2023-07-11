@@ -13,7 +13,7 @@
                     </div>
                     <div class="block-content text-muted">
                         <p>
-                            Silahkan menambah, mengubah dan menghapus data jabatan
+                            Silahkan mengubah data jabatan
                         </p>
                     </div>
                     {{-- form --}}

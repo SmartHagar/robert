@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Honorer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HonorerController extends Controller
 {
@@ -12,7 +13,10 @@ class HonorerController extends Controller
      */
     public function index()
     {
-        //
+        $data = Honorer::all();
+        return view('admin.honorer.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class HonorerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.honorer.create');
     }
 
     /**
@@ -28,7 +32,11 @@ class HonorerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        $data = Honorer::create($data_req);
+        return redirect()->route('honorer.index');
     }
 
     /**
@@ -44,7 +52,10 @@ class HonorerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Honorer::findOrFail($id);
+        return view('admin.honorer.edit', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -52,7 +63,13 @@ class HonorerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        unset($data_req['_method']);
+        $data = Honorer::findOrFail($id);
+        $data->update($data_req);
+        return redirect()->route('honorer.index');
     }
 
     /**
@@ -60,6 +77,8 @@ class HonorerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // destroy honorer
+        $honorer = Honorer::destroy($id);
+        return redirect()->route('honorer.index');
     }
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('jenkel', 12);
             $table->text('pendidikan');
             $table->string('agama', 50);
-            $table->date('tempat');
+            $table->string('tempat');
             $table->date('tanggal_lahir');
             $table->string('no_hp', 18);
             $table->text('alamat');

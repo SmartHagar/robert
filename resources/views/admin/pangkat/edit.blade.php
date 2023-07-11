@@ -13,7 +13,7 @@
                     </div>
                     <div class="block-content text-muted">
                         <p>
-                            Silahkan menambah, mengubah dan menghapus data pangkat
+                            Silahkan mengubah data pangkat
                         </p>
                     </div>
                     {{-- form --}}

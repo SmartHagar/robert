@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Pegawai;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PegawaiController extends Controller
 {
@@ -12,7 +13,10 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        //
+        $data = Pegawai::all();
+        return view('admin.pegawai.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pegawai.create');
     }
 
     /**
@@ -28,7 +32,11 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        $data = Pegawai::create($data_req);
+        return redirect()->route('pegawai.index');
     }
 
     /**
@@ -44,7 +52,10 @@ class PegawaiController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Pegawai::findOrFail($id);
+        return view('admin.pegawai.edit', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -52,7 +63,13 @@ class PegawaiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        unset($data_req['_method']);
+        $data = Pegawai::findOrFail($id);
+        $data->update($data_req);
+        return redirect()->route('pegawai.index');
     }
 
     /**
@@ -60,6 +77,8 @@ class PegawaiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // destroy pegawai
+        $pegawai = Pegawai::destroy($id);
+        return redirect()->route('pegawai.index');
     }
 }
