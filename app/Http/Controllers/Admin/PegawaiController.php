@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Pegawai;
+use App\Models\Personal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Pangkat;
 
 class PegawaiController extends Controller
 {
@@ -14,8 +16,10 @@ class PegawaiController extends Controller
     public function index()
     {
         $data = Pegawai::all();
+        $pangkat = Pangkat::all();
         return view('admin.pegawai.index', [
-            'data' => $data
+            'data' => $data,
+            'pangkat' => $pangkat
         ]);
     }
 
@@ -24,7 +28,15 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        return view('admin.pegawai.create');
+        $personal = Personal::with(['pegawai', 'honorer'])
+            ->whereDoesntHave('pegawai')
+            ->whereDoesntHave('honorer')
+            ->get();
+        $pangkat = Pangkat::all();
+        return view('admin.pegawai.create', [
+            'personal' => $personal,
+            'pangkat' => $pangkat
+        ]);
     }
 
     /**
@@ -53,8 +65,12 @@ class PegawaiController extends Controller
     public function edit(string $id)
     {
         $data = Pegawai::findOrFail($id);
+        $personal = Personal::all();
+        $pangkat = Pangkat::all();
         return view('admin.pegawai.edit', [
-            'data' => $data
+            'data' => $data,
+            'personal' => $personal,
+            'pangkat' => $pangkat
         ]);
     }
 

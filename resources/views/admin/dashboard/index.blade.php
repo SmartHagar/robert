@@ -8,20 +8,25 @@
                 <div class="block block-rounded h-100 mb-0">
                     <div class="block-header block-header-default">
                         <h3 class="block-title">
-                            Selamat datang
+                            Selamat datang di Sistem Absensi Kementerian Agama!
                         </h3>
                     </div>
                     <div class="block-content text-muted">
                         <p>
-                            We’ve put everything together, so you can start working on your Laravel project as soon as
-                            possible! Codebase assets are integrated and work seamlessly with Laravel Vite, so you can use
-                            the npm scripts as you would in any other Laravel project.
+                            Website ini dirancang untuk membantu Anda dalam
+                            mengelola dan mencatat kehadiran pegawai serta mempermudah proses absensi di lingkungan
+                            Kementerian Agama.
                         </p>
                         <p>
-                            Feel free to use any examples you like from the full HTML version to build your own pages.
+                            Dengan sistem ini, kami berharap dapat meningkatkan efisiensi dan transparansi dalam proses
+                            absensi, sehingga dapat memberikan manfaat yang lebih baik bagi semua pihak yang terlibat. </p>
+                        <p>
+                            Terima kasih telah menggunakan Sistem Absensi Kementerian Agama. Kami berharap Anda merasakan
+                            kemudahan dan kenyamanan dalam penggunaan platform ini. Jika Anda memiliki pertanyaan atau
+                            masukan, jangan ragu untuk menghubungi kami.
                         </p>
-                        <p class="fw-semibold">
-                            Wish you all the best and happy coding!
+                        <p>
+                            Selamat bekerja dan semoga sukses dalam tugas-tugas Anda di lingkungan Kementerian Agama!
                         </p>
                     </div>
                 </div>

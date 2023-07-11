@@ -1,4 +1,7 @@
 {
+  "_axios-aba6f0e0.js": {
+    "file": "assets/axios-aba6f0e0.js"
+  },
   "resources/fonts/fontawesome/fa-brands-400.ttf": {
     "file": "assets/fa-brands-400-2ef6fdde.ttf",
     "src": "resources/fonts/fontawesome/fa-brands-400.ttf"
@@ -64,7 +67,10 @@
     "src": "resources/fonts/simple-line-icons/Simple-Line-Icons.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-a6d2e222.js",
+    "file": "assets/app-3278c08f.js",
+    "imports": [
+      "_axios-aba6f0e0.js"
+    ],
     "isEntry": true,
     "src": "resources/js/app.js"
   },
@@ -72,6 +78,14 @@
     "file": "assets/app-427a0942.js",
     "isEntry": true,
     "src": "resources/js/codebase/app.js"
+  },
+  "resources/js/codebase/modules/myModule.js": {
+    "file": "assets/myModule-a0f7748a.js",
+    "imports": [
+      "_axios-aba6f0e0.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/codebase/modules/myModule.js"
   },
   "resources/js/pages/datatables.js": {
     "file": "assets/datatables-94720338.js",
@@ -104,7 +118,7 @@
     "src": "resources/sass/codebase/themes/pulse.scss"
   },
   "resources/sass/main.scss": {
-    "file": "assets/main-55deee79.css",
+    "file": "assets/main-b7214ab9.css",
     "isEntry": true,
     "src": "resources/sass/main.scss"
   }

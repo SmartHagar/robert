@@ -25,7 +25,10 @@ class HonorerController extends Controller
      */
     public function create()
     {
-        $personal = Personal::with('honorer')->whereDoesntHave('honorer')->get();
+        $personal = Personal::with(['pegawai', 'honorer'])
+            ->whereDoesntHave('pegawai')
+            ->whereDoesntHave('honorer')
+            ->get();
         return view('admin.honorer.create', [
             'personal' => $personal
         ]);
