@@ -26,7 +26,7 @@ class Personal extends Model
     // relasi has one honorer
     public function honorer()
     {
-        return $this->hasOne(Honorer::class);
+        return $this->hasOne(Honorer::class, 'personal_id', 'id');
     }
 
     // relasi has many absensi

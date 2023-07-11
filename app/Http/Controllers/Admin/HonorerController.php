@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Honorer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Personal;
 
 class HonorerController extends Controller
 {
@@ -24,7 +25,10 @@ class HonorerController extends Controller
      */
     public function create()
     {
-        return view('admin.honorer.create');
+        $personal = Personal::with('honorer')->whereDoesntHave('honorer')->get();
+        return view('admin.honorer.create', [
+            'personal' => $personal
+        ]);
     }
 
     /**
@@ -53,8 +57,10 @@ class HonorerController extends Controller
     public function edit(string $id)
     {
         $data = Honorer::findOrFail($id);
+        $personal = Personal::all();
         return view('admin.honorer.edit', [
-            'data' => $data
+            'data' => $data,
+            'personal' => $personal
         ]);
     }
 
