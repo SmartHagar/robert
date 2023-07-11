@@ -22,4 +22,10 @@ class Pegawai extends Model
     {
         return $this->belongsTo(Pangkat::class);
     }
+
+    // relasi has many absensi
+    public function absensi()
+    {
+        return $this->hasMany(Absensi::class);
+    }
 }

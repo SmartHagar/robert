@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('personal_id')->constrained('personal')->cascadeOnDelete();
             $table->date('tgl_absen');
-            $table->date('jam_masuk');
-            $table->date('jam_pulang');
+            $table->time('jam_masuk');
+            $table->time('jam_pulang');
             $table->string('keterangan');
             $table->timestamps();
         });
