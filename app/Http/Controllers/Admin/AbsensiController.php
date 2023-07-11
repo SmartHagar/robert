@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Absensi;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AbsensiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $data = Absensi::all();
+        return view('admin.absensi.index', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class AbsensiController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.absensi.create');
     }
 
     /**
@@ -28,7 +32,11 @@ class AbsensiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        $data = Absensi::create($data_req);
+        return redirect()->route('absensi.index');
     }
 
     /**
@@ -44,7 +52,10 @@ class AbsensiController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Absensi::findOrFail($id);
+        return view('admin.absensi.edit', [
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -52,7 +63,13 @@ class AbsensiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data_req = $request->all();
+        // remove _token from data_req
+        unset($data_req['_token']);
+        unset($data_req['_method']);
+        $data = Absensi::findOrFail($id);
+        $data->update($data_req);
+        return redirect()->route('absensi.index');
     }
 
     /**
@@ -60,6 +77,8 @@ class AbsensiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // destroy absensi
+        $absensi = Absensi::destroy($id);
+        return redirect()->route('absensi.index');
     }
 }

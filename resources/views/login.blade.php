@@ -13,7 +13,8 @@
                     </p>
                 </div>
             </div>
-            <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center bg-body-extra-light">
+            <div class="hero-static col-md-6 col-xl-4 d-flex align-items-center"
+                style="background-color: rgba(255, 255, 255, 0.533);">
                 <div class="content content-full">
                     <!-- Header -->
                     <div class="d-flex align-items-center justify-content-center">
