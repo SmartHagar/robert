@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Absensi pegawai kementrian Agama Kabupaten Jayapura</title>
+    <title>Absensi guru kementrian Agama Kabupaten Jayapura</title>
 
-    <meta name="description" content="Website Absensi pegawai kementrian Agama Kabupaten Jayapura">
+    <meta name="description" content="Website Absensi guru kementrian Agama Kabupaten Jayapura">
     <meta name="author" content="Robert">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Absensi pegawai kementrian Agama Kabupaten Jayapura">
+    <meta property="og:title" content="Absensi guru kementrian Agama Kabupaten Jayapura">
     <meta property="og:site_name" content="Robert">
-    <meta property="og:description" content="Website Absensi pegawai kementrian Agama Kabupaten Jayapura">
+    <meta property="og:description" content="Website Absensi guru kementrian Agama Kabupaten Jayapura">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">

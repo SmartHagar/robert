@@ -6,7 +6,7 @@
             <div class="hero-static col-md-6 col-xl-8 d-none d-md-flex align-items-md-end">
                 <div class="p-4">
                     <p class="fs-3 fw-semibold text-white">
-                        Absensi pegawai kementrian Agama Kabupaten Jayapura
+                        Absensi Guru kementrian Agama Kabupaten Jayapura
                     </p>
                     <p class="text-white-75 fw-medium">
                         Copyright &copy; <span data-toggle="year-copy"></span>

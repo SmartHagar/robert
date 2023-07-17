@@ -94,20 +94,30 @@
                              <span class="nav-main-link-name">Personal</span>
                          </a>
                      </li>
-                     <li class="nav-main-item">
-                         <a class="nav-main-link{{ request()->is('admin/honorer') ? ' active' : '' }}"
-                             href={{ route('honorer.index') }}>
-                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
-                             <span class="nav-main-link-name">Honorer</span>
+                     <li class="nav-main-item{{ request()->is('admin/guru/*') ? ' open' : '' }}">
+                         <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
+                             aria-expanded="true" href="#">
+                             <i class="nav-main-link-icon fa fa-lightbulb"></i>
+                             <span class="nav-main-link-name">Guru</span>
                          </a>
+                         <ul class="nav-main-submenu">
+                             <li class="nav-main-item">
+                                 <a class="nav-main-link{{ request()->is('admin/guru/honorer') ? ' active' : '' }}"
+                                     href={{ route('honorer.index') }}>
+                                     <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                                     <span class="nav-main-link-name">Honorer</span>
+                                 </a>
+                             </li>
+                             <li class="nav-main-item">
+                                 <a class="nav-main-link{{ request()->is('admin/guru/pegawai') ? ' active' : '' }}"
+                                     href={{ route('pegawai.index') }}>
+                                     <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
+                                     <span class="nav-main-link-name">Pegawai</span>
+                                 </a>
+                             </li>
+                         </ul>
                      </li>
-                     <li class="nav-main-item">
-                         <a class="nav-main-link{{ request()->is('admin/pegawai') ? ' active' : '' }}"
-                             href={{ route('pegawai.index') }}>
-                             <i class="fa-solid fa-user-tie nav-main-link-icon "></i>
-                             <span class="nav-main-link-name">Pegawai</span>
-                         </a>
-                     </li>
+
                      {{-- get date now --}}
                      @php
                          $date = date('Y-m-d');

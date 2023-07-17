@@ -17,7 +17,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('pangkat', PangkatController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('personal', PersonalController::class);
-    Route::resource('honorer', HonorerController::class);
-    Route::resource('pegawai', PegawaiController::class);
+    Route::prefix('guru')->group(function () {
+        Route::resource('honorer', HonorerController::class);
+        Route::resource('pegawai', PegawaiController::class);
+    });
     Route::resource('absensi', AbsensiController::class);
 });

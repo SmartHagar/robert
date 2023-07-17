@@ -16,6 +16,10 @@ class AbsensiApi extends Controller
             $join->on('personal.id', '=', 'absensi.personal_id')
                 ->whereRaw('absensi.tgl_absen like "%' . $tgl_absen . '%"');
         })
+            ->with('pegawai', 'honorer')
+            ->where(function ($query) {
+                $query->has('pegawai')->orWhereHas('honorer');
+            })
             ->select('personal.*', 'absensi.tgl_absen', 'absensi.keterangan', 'absensi.jam_masuk', 'absensi.jam_pulang', 'absensi.id as absensi_id')
             ->orderBy('absensi.tgl_absen', 'asc')
             ->get();
