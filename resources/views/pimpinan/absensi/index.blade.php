@@ -25,7 +25,7 @@
                 <div class="block block-rounded h-100 mb-0">
                     <div class="block-header block-header-default">
                         <h3 class="block-title">
-                            Laporan Pegawai
+                            Laporan Absensi Guru
                         </h3>
                     </div>
                     <div class="block block-rounded col-3 mx-auto">
@@ -41,9 +41,9 @@
                                         <tr>
                                             <th class="text-center" style="width: 80px;">#</th>
                                             <th>Nama</th>
-                                            <th>jam masuk</th>
-                                            <th>jam pulang</th>
-                                            <th>keterangan</th>
+                                            <th>Jam masuk</th>
+                                            <th>Jam pulang</th>
+                                            <th>Keterangan</th>
                                             <th></th>
                                         </tr>
                                     </thead>

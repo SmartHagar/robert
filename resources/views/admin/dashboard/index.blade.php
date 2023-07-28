@@ -8,7 +8,7 @@
                 <div class="block block-rounded h-100 mb-0">
                     <div class="block-header block-header-default">
                         <h3 class="block-title">
-                            Selamat datang di Sistem Absensi Kementerian Agama!
+                            Selamat datang di Sistem Absensi Guru Kementerian Agama!
                         </h3>
                     </div>
                     <div class="block-content text-muted">

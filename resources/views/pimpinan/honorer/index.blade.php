@@ -25,7 +25,7 @@
                 <div class="block block-rounded h-100 mb-0">
                     <div class="block-header block-header-default">
                         <h3 class="block-title">
-                            Laporan Pegawai
+                            Laporan Guru Honorer
                         </h3>
                     </div>
                     <div class="block block-rounded">
