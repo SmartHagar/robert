@@ -41,6 +41,7 @@
                                         <tr>
                                             <th class="text-center" style="width: 80px;">#</th>
                                             <th>Nama</th>
+                                            <th>Hari/Tanggal</th>
                                             <th>Jam masuk</th>
                                             <th>Jam pulang</th>
                                             <th>Keterangan</th>
@@ -52,6 +53,7 @@
                                             <tr>
                                                 <td class="text-center">{{ $loop->iteration }}</td>
                                                 <td class="text-muted text-nowrap">{{ $item->nama }}</td>
+                                                <td class="text-muted text-nowrap hari-tgl"></td>
                                                 <td class="text-muted text-nowrap">{{ $item->jam_masuk }}</td>
                                                 <td class="text-muted text-nowrap">{{ $item->jam_pulang }}</td>
                                                 <td class="text-muted text-nowrap">{{ $item->keterangan }}</td>

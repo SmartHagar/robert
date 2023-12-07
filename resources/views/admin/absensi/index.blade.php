@@ -39,9 +39,10 @@
                                     <tr>
                                         <th class="text-center" style="width: 80px;">#</th>
                                         <th>Nama</th>
-                                        <th>jam masuk</th>
-                                        <th>jam pulang</th>
-                                        <th>keterangan</th>
+                                        <th>Hari/Tanggal</th>
+                                        <th>Jam Masuk</th>
+                                        <th>Jam Pulang</th>
+                                        <th>Keterangan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -50,6 +51,7 @@
                                         <tr class="@if ($item->jam_masuk == null) bg-warning-light @endif">
                                             <td class="text-center">{{ $loop->iteration }}</td>
                                             <td class="text-muted text-nowrap">{{ $item->nama }}</td>
+                                            <td class="text-muted text-nowrap hari-tgl"></td>
                                             <td class="text-muted text-nowrap">
                                                 {{-- {{ $item->jam_masuk }} --}}
                                                 <input type="time" value="{{ $item->jam_masuk }}" class="form-control"

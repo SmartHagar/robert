@@ -1,6 +1,10 @@
 console.log("absensi");
 import axios from "axios";
+import moment from "moment/min/moment-with-locales";
+
+moment.locale("id");
 const tgl_absen = document.getElementById("tgl_absen");
+const hariTgl = document.querySelectorAll(".hari-tgl");
 // 2023-07-02
 // get params tgl_absen from params url
 const location = window.location;
@@ -21,7 +25,12 @@ if (tgl_absen) {
   // set tgl_absen to tgl_params
   tgl_absen.value = tgl_params;
 }
-
+if (hariTgl) {
+  // change text to tgl_absen
+  hariTgl.forEach((el) => {
+    el.innerText = moment(tgl_absen.value).format("dddd, D MMMM YYYY");
+  });
+}
 // simpan absensi
 const simpan_absen = document.querySelectorAll(".simpan_absen");
 

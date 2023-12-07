@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HonorerController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Example Routes
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('user');
+Route::get('honorer', [HonorerController::class, 'index'])->name('user.honorer');
+Route::get('pegawai', [PegawaiController::class, 'index'])->name('user.pegawai');
+
 
 Route::controller(LoginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
