@@ -55,6 +55,9 @@
                         </div>
                     </form>
                     <!-- END Sign In Form -->
+                    <div class="w-full text-center">
+                        <a href="/">Kembali ke menu utama</a>
+                    </div>
                 </div>
             </div>
         </div>

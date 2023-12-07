@@ -41,6 +41,9 @@
 
           <!-- Right Section -->
           <div class="space-x-1">
+              <a class="link-fx fw-bold" href={{ route('login') }}>
+                  <span class="fs-6 text-primary">Login</span>
+              </a>
 
               <!-- Toggle Sidebar -->
               <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
